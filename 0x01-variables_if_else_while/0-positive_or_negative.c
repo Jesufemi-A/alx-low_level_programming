@@ -1,8 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
-/* A program that prints the value of a random number */
+/**
+ * main - prints if the number is positive, negative;
+ * return Always 0
+ */
 int main(void)
 {
 	int n;
