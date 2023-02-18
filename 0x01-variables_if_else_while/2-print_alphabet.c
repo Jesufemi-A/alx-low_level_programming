@@ -7,11 +7,11 @@
 
 int main(void)
 {
-	char lower_case_alphabet;
+	char lower;
 
-	for (lower_case_alphabet = a; lower_case_alphabet <= z; lower_case_alphabet++)
+	for (lower = 'a'; lower <= 'z'; lower++)
 	{
-		putchar(lower_case_alphabet);
+		putchar(lower);
 	}
 	putchar(10);
 	return (0);
