@@ -19,7 +19,6 @@ int main(void)
 	{
 		putchar(upper);
 	}
-	putchar(26);
 	return (0);
 
 }
