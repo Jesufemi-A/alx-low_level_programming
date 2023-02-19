@@ -19,9 +19,9 @@ int main(void)
 	if (x > 5)
 		printf("Last digit of %d is %d", n, x);
 	else if ((x < 6) && (x != 0)
-			printf("Last digit of %d is %d", n, x);
-			else
-			printf("Last digit of %d is %d", n, x);
+		printf("Last digit of %d is %d", n, x);
+	else
+		printf("Last digit of %d is %d", n, x);
 	putchar('\n');
 	return (0);
 }
