@@ -16,12 +16,15 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	x = (n % 10);
 
-	if (x > 5)
-		printf("Last digit of %d is %d", n, x);
-	else if ((x < 6) && (x != 0)
-		printf("Last digit of %d is %d", n, x);
-	else
-		printf("Last digit of %d is %d", n, x);
-	putchar('\n');
+		if (x > 5)
+		{
+			printf("Last digit of %d is %d\n", n, x);
+		}
+		else if ((x < 6) && (x != 0))
+		{
+			printf("Last digit of %d is %d\n", n, x);
+		}
+		else
+			printf("Last digit of %d is %d\n", n, x);
 	return (0);
 }
