@@ -1,25 +1,23 @@
 #include <stdio.h>
-
 /**
- * main - prints the alphabet in lowercase,
- * followed by a new line
- * Return: Always 0 (Success)
+ * main - Program entry point
+ *
+ * Return: 0 on success. Error code otherwise
  */
-
 int main(void)
 {
-	char lower;
+	char a = 'a';
+	int n = 0;
 
-	for (lower = 'a'; lower <= 'z'; lower++)
+	while (n < 26)
 	{
-		if (lower != 'e' || lower != 'q')
+		if (a != 'q' && a != 'e')
 		{
-			putchar(lower);
+			putchar(a);
 		}
-		else
-		{
-			lower++
-		}
+		a++;
+		n++;
 	}
+	putchar('\n');
 	return (0);
 }
