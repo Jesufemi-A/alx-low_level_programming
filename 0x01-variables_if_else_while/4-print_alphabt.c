@@ -10,11 +10,15 @@ int main(void)
 {
 	char lower;
 
-	for (lower = 'a'; lower <= 'z'; lower++)
+	for (lower = 'a'; lower <= 'z')
 	{
 		if (lower != 'e' || lower != 'q')
 		{
 			putchar(lower);
+		}
+		else
+		{
+			lower++
 		}
 	}
 	return (0);
