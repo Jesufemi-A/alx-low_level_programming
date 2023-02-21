@@ -13,5 +13,8 @@ void print_alphabet(void)
 	char alpha;
 
 	for (n = 1, alpha = 'a'; n <= 26; n++, alpha++)
-			_putchar(alpha);
+	{
+		_putchar(alpha);
+	}
+	putchar('\n');
 }
