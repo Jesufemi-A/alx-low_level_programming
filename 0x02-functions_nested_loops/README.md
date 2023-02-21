@@ -1,1 +1,1 @@
-This is a C programming project on functions
+This is a C progamming project
