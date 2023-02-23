@@ -3,7 +3,7 @@
 /**
  * _isdigit - a function that checks for a digit (0 through 9)
  * @c: receives parameter
- * Return: digit (0 through 9)
+ * Return: digits of numbers
  *
  */
 
