@@ -14,6 +14,6 @@ char *rot13(char *a);
 void print_number(int n);
 char *infinite_add(char *n1, char *n2, char *r, int size_r);
 void print_buffer(char *b, int size);
-int _magic(char *a, *p);
+int _magic(char *a, char *p);
 
 #endif /* HOLBERTON_H */
