@@ -3,6 +3,7 @@
  * main - a function that does things
  * Return: Always 0 (Success)
  */
+
 int main(void)
 {
 	int n;
