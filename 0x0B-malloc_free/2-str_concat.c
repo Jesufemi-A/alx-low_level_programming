@@ -43,7 +43,6 @@ char *str_concat(char *s1, char *s2)
 	{
 		ptr[i] = s1[i];
 	}
-	ptr = ptr + size_s1;
 	while (s2)
 	{
 		ptr[i] = s2[j];
