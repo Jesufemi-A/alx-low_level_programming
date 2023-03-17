@@ -12,55 +12,29 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j;
+	unsigned int i;
 	char *ptr;
 
 	unsigned int size_s1 = 0;
 	unsigned int size_s2 = 0;
-	unsigned int size_n = 0;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	for (i = 0; s1[i] != '\0'; i++)
-	{
 		size_s1 = size_s1 + 1;
-	}
 	for (i = 0; s2[i] != '\0'; i++)
 		size_s2 = size_s2 + 1;
+	if (n >= size_s2)
+		n = size_s2;
+	ptr = malloc(sizeof(char) * (size_s1 + n + 1));
+	if (ptr == NULL)
+		return (NULL);
+	for (i = 0; i < size_s1; i++)
+		ptr[i]  = s1[i];
 	for (i = 0; i < n; i++)
-		size_n = size_n + 1;
-	if (n >= (size_s2 + 1))
-	{
-		ptr = malloc(size_s1 + size_s2 + 1);
-		if (ptr == NULL)
-			return (NULL);
-		for (i = 0, j = 0; i < (size_s1 + size_s2 + 1); i++)
-		{
-			if (i < size_s1)
-				ptr[i] = s1[j++];
-			else
-			{
-				j = 0;
-				while (j < size_s2)
-					ptr[i] = s2[j++];
-			}
-		}
-		return (ptr);
-	}
-	else
-	{
-		ptr = malloc(size_s1 + size_n + 1);
-		if (ptr == NULL)
-			return (NULL);
-		for (i = 0, j = 0; i < (size_s1 + size_n + 1); i++)
-		{
-			if (i < size_s1)
-				ptr[i] = s1[j++];
-			else
-			{
-				j = 0;
-				while (j < size_n)
-					ptr[i] = s2[j++];
-			}
-		}
-		return (ptr);
-	}
+		ptr[size_s1 + i] = s2[i];
+	ptr[size_s1 + n] = '\0';
+	return (ptr);
 }
