@@ -11,10 +11,13 @@
 size_t list_len(const list_t *h)
 {
 	int num = 0;
-	list_h traveller = h;
+	const list_t *traveller = h;
 
 	while (traveller != NULL)
-		num = num + 1;
+	{
+		num++;
+		traveller = traveller->next;
+	}
 	return (num);
 
 }
