@@ -12,20 +12,12 @@ void free_list(list_t *head)
 {
 	list_t *traveller;
 
-	traveller = head;
-
-	while (traveller != NULL)
+	while (head)
 	{
-		list_t *present = traveller->next;
-
+		traveller = head;
+		head = head->next;
 		free(traveller->str);
 		free(traveller);
-		traveller = present;
-
-		if (traveller == NULL)
-		{
-			free(present);
-		}
 	}
 	free(head);
 }
