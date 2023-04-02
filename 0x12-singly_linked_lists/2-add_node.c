@@ -35,16 +35,16 @@ list_t *add_node(list_t **head, const char *str)
 
 /**
  * s_len - return the length of a string
- * @s: string parameter
+ * @b: string parameter
  * Return: returns the length
  */
 
 
-int s_len(const char *s)
+int s_len(const char *b)
 {
 	int a = 0;
 
-	for (;*s;s++)
+	for (;*b;b++)
 	{
 		a++;
 	}
