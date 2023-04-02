@@ -16,15 +16,15 @@ void free_list(list_t *head)
 
 	while (traveller != NULL)
 	{
-		list_t *present = traveller;
+		list_t *present = traveller->next;
 
+		free(traveller->str);
 		free(traveller);
 		traveller = present;
 
 		if (traveller == NULL)
 		{
 			free(present);
-			free(traveller);
 		}
 	}
 	free(head);
