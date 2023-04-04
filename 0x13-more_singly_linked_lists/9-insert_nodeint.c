@@ -1,7 +1,6 @@
 #include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
  * insert_nodeint_at_index - insert a new node at idx index
  * @head: double head pointer position
@@ -9,7 +8,6 @@
  * @n: data of new node
  * Return: the newnode
  */
-
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	unsigned int i, length;
@@ -34,6 +32,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		traveller = traveller->next;
 	for (i = 0; i < idx; i++)
 		help = help->next;
+	if (idx == length - 1)
+	{
+		help->next = new_node;
+		new_node = NULL;
+		return (new_node);
+	}
 	help->next = new_node;
 	new_node->next = traveller;
 	return (new_node);
