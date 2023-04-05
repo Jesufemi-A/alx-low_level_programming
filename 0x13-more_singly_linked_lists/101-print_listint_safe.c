@@ -33,7 +33,10 @@ size_t print_listint_safe(const listint_t *head)
 			traveller = traveller->next;
 		}
 		if (traveller == help)
+		{
+			printf("-> [%p] %d", (void *)help, help->n);
 			exit(98);
+		}
 	}
 	return (num);
 }
