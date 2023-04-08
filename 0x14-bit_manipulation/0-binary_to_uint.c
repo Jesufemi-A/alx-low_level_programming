@@ -10,44 +10,27 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	int num;
+	int index;
 	unsigned int conversion;
 	unsigned int power;
-	unsigned int length;
 
+	index = 0;
 	conversion = 0;
 	power = 1;
 	if (b == NULL)
 		return (0);
-	while ((*b) != '\0')
+	while (b[index] != '\0')
 	{
-		if ((*b) != 0 || (*b) != 1)
+		if (b[index] == '0' || b[index] == '1')
+			index++;
+		else
 			return (0);
-		b++;
 	}
-	length = slength(b);
-	for (num = length - 1; num >= 0; num--)
+	while (--index >= 0)
 	{
-		if (b[num] == '1')
-			conversion = conversion + 1;
-		power = power * 2;
+		if (b[index] == '1')
+			conversion = conversion + power;
+		power = power << 1;
 	}
-
-
 	return (conversion);
-}
-
-/**
- * slength - finds the length of a string
- * @string: parameter for string
- * Return: the length of a string
- */
-unsigned int slength(const char  *string)
-{
-	unsigned int i;
-
-	i = 0;
-	for (; *string; string++)
-		i++;
-	return (i);
 }
