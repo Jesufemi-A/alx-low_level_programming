@@ -1,12 +1,8 @@
-#include <stdio.h>
 #include "main.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
 /**
  * read_textfile - reads text file and prints it to standard output
  * @filename: file that is being read
- * letters: number of letteers to be read and printed
+ * @letters: number of letteers to be read and printed
  * Return: the number of letters to be read and printed
  */
 
@@ -16,9 +12,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t read_text_file;
 	char *middleman;
 	ssize_t write_text_file;
-
-	f_descriptor = 0;
-	read_text_file = 0;
 
 	if (filename == NULL)
 		return (0);
