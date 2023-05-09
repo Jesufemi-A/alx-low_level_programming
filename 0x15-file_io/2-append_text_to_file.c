@@ -1,27 +1,30 @@
 #include "main.h"
 
 /**
- * create_file - creates a file
- * @filename: file to be create
- * @text_content: content to be written to file
+ * append_text_to_file - append text to a file
+ * @filename: file to append text to
+ * @text_content: content to append to filename
  * Return: 1 on success, -1 on failure
  */
 
-int create_file(const char *filename, char *text_content)
+int append_text_to_file(const char *filename, char *text_content)
 {
-	int check_open, text_length;
-	ssize_t text_write;
+	int text_length, check_open;
+	ssize_t byte_text_write;
 
 	if (filename == NULL)
 		return (-1);
-	check_open = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 600);
-	if (check_open == -1)
+	check_open = open(filename, O_WRONLY | O_APPEND);
+	if (check_open < 0)
+	{
+		close(check_open);
 		return (-1);
+	}
 	if (text_content)
 	{
 		text_length = s_len(text_content);
-		text_write = write(check_open, text_content, text_length);
-		if (text_write != text_length || text_write == -1)
+		byte_text_write = write(check_open, text_content, text_length);
+		if (byte_text_write == -1 || byte_text_write != text_length)
 		{
 			close(check_open);
 			return (-1);
@@ -30,6 +33,7 @@ int create_file(const char *filename, char *text_content)
 	close(check_open);
 	return (1);
 }
+
 
 /**
  * s_len - finds length of string
